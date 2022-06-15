@@ -27,7 +27,10 @@ Estimated Data Stack usage: 6 byte(s)
 
 (Informatie data de compilator)
 
+## Hadware Description
+Placuta THT este compusa dintr-un microcontroller ATMEGA164A cu footprint THD si componentele sale auxiliare (condensatoare, quartz si un LED pentru verificare), iar portul A al microcontrollerului este impartit jumate in input si output. Jumatea de input a portului A este conectat la 4 butoane la GND, iar jumatea de output este conectat la 4 led-uri. Alimentarea se face printr-un USB bridge bazat pe chip-ul CH340G USB to Serial Converter.
 
+Varianta SMD introduce un package mai mic pentru toate componentele, ATMEGA164A fiind pe footprint TQFP si toate rezistoarele, condensatoare si led-urile pe footprint 0805. Bridge-ul USB to Serial este incorporat in placuta conectat la un port micro-USB pus pe placuta.
 ## Hardware Schematic 
 ![Simon Says Schematic](https://user-images.githubusercontent.com/107213955/173852601-c4251566-8397-4a43-937b-b6ac5f7ba3bf.jpg)
 
