@@ -40,7 +40,7 @@ Data Stack size         : 256
 #define SW2 PINB.1
 #define SW3 PINB.2
 #define SW4 PINB.3
-#define MAX_LEVEL 100
+#define MAX_LEVEL 3
 
 // Write a character to the USART1 Transmitter
 #pragma used+
@@ -58,7 +58,7 @@ int Sequence_Input[MAX_LEVEL];
 int level = 1;
 int Sequence_Step_Delay = 1000;
 
-void All_LED_Shut_Off()
+void All_LED_Off()
 {
     LED1=0;
     LED2=0;
@@ -87,7 +87,7 @@ void generate_Current_Level()
 void show_Current_Level() 
 {
  unsigned int i;
- All_LED_Shut_Off();           
+ All_LED_Off();           
  
   for ( i = 0; i < level; i++) 
   { 
@@ -123,13 +123,13 @@ void show_Current_Level()
 }
 
 void right_Current_Level() {
-  All_LED_Shut_Off();
+  All_LED_Off();
   delay_ms(250);
 
   All_LED_On();
   delay_ms(500);
 
-  All_LED_Shut_Off();
+  All_LED_Off();
   delay_ms(500);
 
   if (level < MAX_LEVEL) {
@@ -143,9 +143,9 @@ void wrong_Current_Level()
   unsigned int i;  
   for ( i = 0; i < 3; i++) 
   {
-     All_LED_On();
+    All_LED_On();
     delay_ms(250);
-    All_LED_Shut_Off();
+    All_LED_Off();
     delay_ms(250);
   }
   
@@ -158,7 +158,8 @@ void get_Current_Level()
   int flag = 0; //flag correct Current_Level
   unsigned int i;
   
-  for (i = 0; i < level; i++) {
+  for (i = 0; i < level; i++) 
+  {
     flag = 0;
 
     while (flag == 0) 
@@ -223,8 +224,21 @@ void get_Current_Level()
         LED4=0;
       }
     }
+  }                     
+  if(i==MAX_LEVEL)
+  { 
+    for(i=0;i<10;i++)
+    { 
+        All_LED_Off();
+        delay_ms(100);
+        All_LED_On();
+        delay_ms(100);
+    }
+    wrong_Current_Level();
+        
   }
-  right_Current_Level();
+  else
+    right_Current_Level();
 }
 
 void Led_Flash()
@@ -413,4 +427,4 @@ while (1)
 
     }
 
-}Sequence_Input
+}

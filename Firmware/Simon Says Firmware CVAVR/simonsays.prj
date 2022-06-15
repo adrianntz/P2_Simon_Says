@@ -21,7 +21,7 @@ OutputLinkerFilesDirectory=Release\Link
 AllowDisplayFunctionCallTree=1
 CleanUp=2
 F1=main.c
-TimeStamp1=1421650205
+TimeStamp1=1422889037
 OF2=C:\cvavreval\inc\mega324_bits.h
 TimeStamp2=1016487376
 OF3=C:\cvavreval\inc\mega164a.h
@@ -136,8 +136,8 @@ DisplayCodeSizeError=1
 UseBootAppXmega=0
 RebuildAll=0
 LinkageInformationPresent=1
-COFFileTimeStamp=1422884189
-Build=36
+COFFileTimeStamp=1422889039
+Build=39
 GlobalVarAddr=916
 EEPROMVarAddr=0
 [DefinedSymbolsDebug]
@@ -249,7 +249,7 @@ UseBootAppXmega=0
 RebuildAll=0
 LinkageInformationPresent=1
 COFFileTimeStamp=-1
-Build=36
+Build=39
 IncludePath0=C:\cvavreval\inc
 IncludePath1=
 IncludePath2=
@@ -508,8 +508,8 @@ L13=Enhanced function parameters passing: Mode 2
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 36
-L18=8532 line(s) compiled
+L17=Build: 39
+L18=8546 line(s) compiled
 L19=No errors
 L20=No warnings
 L21=
@@ -529,19 +529,19 @@ L34=Heap size: 0 byte(s)
 Lines=38
 L35=
 L36=EEPROM usage: 0 byte(s), 0.0% of EEPROM
-L37=Program size: 622 words (1244 bytes), 7.6% of FLASH
-L38=101 words (202 bytes), 14.0% reduced by Code Compression
+L37=Program size: 646 words (1292 bytes), 7.9% of FLASH
+L38=101 words (202 bytes), 13.5% reduced by Code Compression
 [BuildInfoAssembler]
 Lines=12
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\Debug\List\simonsays.asm(2501): No EEPROM data, deleting C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\Debug\Exe\simonsays.eep
+L4=C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\Debug\List\simonsays.asm(2539): No EEPROM data, deleting C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\Debug\Exe\simonsays.eep
 L5=
 L6=ATmega164A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x0004dc   1214     30   1244   16384   7.6%
+L9=[.cseg] 0x000000 0x00050c   1262     30   1292   16384   7.9%
 L10=[.dseg] 0x000100 0x000394      0    404    404    1024  39.5%
 L11=[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 L12=
@@ -557,7 +557,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1421655512
+TimeStamp=1422889098
 [BookmarksFoldedCode]
 Files=6
 F1=C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\main.c
@@ -585,11 +585,11 @@ BK9=-1
 [FoldedCode1]
 Blocks=0
 [Bookmarks2]
-TimeStamp=1421650205
-Row=60
-Column=39
+TimeStamp=1422889037
+Row=42
+Column=21
 ScrollPosX=0
-ScrollPosY=42
+ScrollPosY=18
 BK0=-1
 BK1=-1
 BK2=-1
@@ -664,6 +664,15 @@ BK6=-1
 BK7=-1
 BK8=-1
 BK9=-1
+[HeadersList]
+Files=1
+F1=C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\main.c
+[Header1]
+Files=4
+F1=C:\cvavreval\inc\mega164a.h
+F2=C:\cvavreval\inc\mega324_bits.h
+F3=C:\cvavreval\inc\delay.h
+F4=C:\cvavreval\inc\stdlib.h
 [FoldedCode2]
 Blocks=0
 [FoldedCode3]
@@ -674,12 +683,3 @@ Blocks=0
 Blocks=0
 [FoldedCode6]
 Blocks=0
-[HeadersList]
-Files=1
-F1=C:\Users\adyco\OneDrive - Universitatea Politehnica Bucuresti\POLI\ANUL 3 SEM 2\P2\P2_Simon_says\main.c
-[Header1]
-Files=4
-F1=C:\cvavreval\inc\mega164a.h
-F2=C:\cvavreval\inc\mega324_bits.h
-F3=C:\cvavreval\inc\delay.h
-F4=C:\cvavreval\inc\stdlib.h

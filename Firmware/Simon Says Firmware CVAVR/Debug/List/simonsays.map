@@ -18,13 +18,13 @@ Sequence_Step_Delay                                                             
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-All_LED_Shut_Off                                                                  0x0007C      5
+All_LED_Off                                                                       0x0007C      5
 All_LED_On                                                                        0x00081      5
 generate_Current_Level                                                            0x00086     22
 show_Current_Level                                                                0x0009C     42
 right_Current_Level                                                               0x000C6     24
 wrong_Current_Level                                                               0x000DE     24
-get_Current_Level                                                                 0x000F6     78
-Led_Flash                                                                         0x00144     33
-main                                                                              0x00165    105
-rand                                                                              0x001CE     28
+get_Current_Level                                                                 0x000F6    102
+Led_Flash                                                                         0x0015C     33
+main                                                                              0x0017D    105
+rand                                                                              0x001E6     28
