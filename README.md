@@ -33,6 +33,8 @@ Placuta THT este compusa dintr-un microcontroller ATMEGA164A cu footprint THD si
 Varianta SMD introduce un package mai mic pentru toate componentele, ATMEGA164A fiind pe footprint TQFP si toate rezistoarele, condensatoare si led-urile pe footprint 0805. Bridge-ul USB to Serial este incorporat in placuta conectat la un port micro-USB pus pe placuta.
 ## Hardware Schematic 
 ![Simon Says Schematic](https://user-images.githubusercontent.com/107213955/173852601-c4251566-8397-4a43-937b-b6ac5f7ba3bf.jpg)
+## Hardware PCB Layout
+![Screenshot_1](https://user-images.githubusercontent.com/107213955/173942404-e15a8992-f185-4c62-8aa9-2c28f8984cef.png)
 
 ## BOM 
 
