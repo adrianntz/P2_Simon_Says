@@ -14,6 +14,7 @@ Firmware-ul pentru Atmega164A este scris in C folosind compilatorul CodeVisionAV
 Pentru jocul Simon Says vom folosi doar Portul A al microcontrollerului. Astfel, cu Code Wizard am initializat Pinii PA0->3 ca input si conectati la rezistorul pull-up intern, acesti pini fiind conectati la switch-uri, iar pinii PA4->7 sunt de tip output prin care aprindem LED-urile.
 Codul are ca structura principala doi vectori de lungime MAX_LEVEL, unul fiind lista de secvente a nivelului si al doilea fiind secventa introdusa de catre jucator.
 Astfel, lungimea jocului poate fi setata folosind MAX_LEVEL. La pornirea firmware-ului se umple vectorul nivelului cu valori randomizate intre 0 si 4. De-a lungul jocului se completeaza si vectorul cu secventele introduse de jucator, si se vor compara ce doi vetori. In momentul in care se greseste o secventa sau se ajunge la lungimea maxima, se termina jocul si se reseteaza vectorii.
+De asemenea Firmware-ul are implementat o dificultate a jocului, anume viteza afisarii secventei curente. Cu cat este mai avansat jocul intr-o secventa mai mare, aceasta viteza creste, facand jocul mai dificil cu cat te joci mai mult.
 
 ## Hardware Schematic 
 ![Simon Says Schematic](https://user-images.githubusercontent.com/107213955/173852601-c4251566-8397-4a43-937b-b6ac5f7ba3bf.jpg)
