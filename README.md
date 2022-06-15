@@ -16,6 +16,18 @@ Codul are ca structura principala doi vectori de lungime MAX_LEVEL, unul fiind l
 Astfel, lungimea jocului poate fi setata folosind MAX_LEVEL. La pornirea firmware-ului se umple vectorul nivelului cu valori randomizate intre 0 si 4. De-a lungul jocului se completeaza si vectorul cu secventele introduse de jucator, si se vor compara ce doi vetori. In momentul in care se greseste o secventa sau se ajunge la lungimea maxima, se termina jocul si se reseteaza vectorii.
 De asemenea Firmware-ul are implementat o dificultate a jocului, anume viteza afisarii secventei curente. Cu cat este mai avansat jocul intr-o secventa mai mare, aceasta viteza creste, facand jocul mai dificil cu cat te joci mai mult.
 
+Utilizare Memorie Firmware:
+EEPROM usage: 0 byte(s), 0.0% of EEPROM
+
+Program size: 646 words (1292 bytes), 7.9% of FLASH
+
+RAM Global variables size: 404 byte(s)
+
+Estimated Data Stack usage: 6 byte(s)
+
+(Informatie data de compilator)
+
+
 ## Hardware Schematic 
 ![Simon Says Schematic](https://user-images.githubusercontent.com/107213955/173852601-c4251566-8397-4a43-937b-b6ac5f7ba3bf.jpg)
 
@@ -46,3 +58,16 @@ De asemenea Firmware-ul are implementat o dificultate a jocului, anume viteza af
 | U2,                            | 1    | CH340G            | Package_SO:SOIC-16_3.9x9.9mm_P1.27mm                       | USB serial converter, UART, SOIC-16                     |
 | Y1,                            | 1    | 20MHz             | Crystal:Crystal_SMD_HC49-SD_HandSoldering                  | Two pin crystal                                         |
 | Y2,                            | 1    | 12MHz             | Crystal:Crystal_SMD_HC49-SD_HandSoldering                  | Two pin crystal                                         |
+
+## Bibliography
+
+https://create.arduino.cc/projecthub/bernieri/genius-game-simon-0e76dc
+
+https://www.youtube.com/watch?v=xLLTxN_UBnI
+
+http://ww1.microchip.com/downloads/en/devicedoc/atmel-8272-8-bit-avr-microcontroller-atmega164a_pa-324a_pa-644a_pa-1284_p_datasheet.pdf
+
+https://cdn.sparkfun.com/datasheets/Dev/Arduino/Other/CH340DS1.PDF
+
+
+
