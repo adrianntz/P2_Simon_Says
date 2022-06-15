@@ -10,133 +10,51 @@
 <p></p>
 <p></p>
 <button type="button" class="btn btn-dark">Modul de implementare</button><p></p>
-<button type="button" class="btn btn-dark">Descrierea hardware</button><p></p>
-<button type="button" class="btn btn-dark">Descrierea software</button><p></p>
-<button type="button" class="btn btn-dark">Rezultate si concluzii</button><p></p>
+<button type="button" class="btn btn-dark">Hardware Description</button><p></p>
+<button type="button" class="btn btn-dark">Firmware Architecture</button><p></p>
 <h2>Descrierea hardware a partii comune </h2>
 <p>In prima etapa s-au lipit componentele aferente schemei respective regasite in BOM-ul de mai jos. Aceste piese asigura functionalitatea microprocesorului AtMega164A , oferindu-i o sursa de clock signal folosind un quartz. De asemenea avem conectat la GPIO doua butoane SW0 si SW1 si un led rosu. S-a instalat si un firmware de test pe uP ce genereaza un semnal PWM pe LED si utilizand un driver pentru USART se returneaza pe interfata USART caracterul primit +1. 
 La apasarea switch-ului SW1 frecventa semnalului PWM se schimba.</p>
+<h2>Descrierea hardware</h2>
+Placuta THT este compusa dintr-un microcontroller ATMEGA164A cu footprint THD si componentele sale auxiliare (condensatoare, quartz si un LED pentru verificare), iar portul A al microcontrollerului este impartit jumate in input si output. Jumatea de input a portului A este conectat la 4 butoane la GND, iar jumatea de output este conectat la 4 led-uri. Alimentarea se face printr-un USB bridge bazat pe chip-ul CH340G USB to Serial Converter.
+
+Varianta SMD introduce un package mai mic pentru toate componentele, ATMEGA164A fiind pe footprint TQFP si toate rezistoarele, condensatoare si led-urile pe footprint 0805. Bridge-ul USB to Serial este incorporat in placuta conectat la un port micro-USB pus pe placuta.
 
 <h3>Poza placuta cu componentele lipite</h3>
 <img src="https://i.ibb.co/6nQbzXZ/3c10f8a3-4e19-4c41-8099-8b59bf6fbae6.jpg" alt="Poza placuta fata " width="273" height="386">
 <h3>Spatele placutei cu componentele lipite</h3>
 <img src="https://i.ibb.co/vx5kvWg/185b5082-e1d2-40ca-8120-e2aa5e072f18.jpg" alt="Poza placuta spate " width="273" height="386">
+<h3>Placuta Finalizata</h3>
+<img src="https://i.ibb.co/cYbXNS3/Whats-App-Image-2022-06-15-at-5-21-12-PM-1.jpg" alt="Poza final " width="273" height="386">
+<h3>Hardware Schematic</h3>
+<img src="https://user-images.githubusercontent.com/107213955/173852601-c4251566-8397-4a43-937b-b6ac5f7ba3bf.jpg" alt="Schematic  " width="954" height="674">
 
-<h2>BOM (O sa fie actualizat pe parcursul proiectului) </h2>
 
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-<table style="width:100%">
-  <tr>
-    <th>Cantitate</th>
-    <th>Referinta</th> 
-    <th>Valoare</th>
-    <th>Capsula</th>
+<h2>BOM</h2>
 
-    <th>Furnizor</th>
-    <th>Pret unitar(lei)</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>U1</td> 
-    <td>AtMega164A</td>
-    <td>DIP40</td>
+<img src="https://i.ibb.co/7bmn9TF/Screenshot-4.png" alt="Schematic  " width="1186" height="490">
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>R1</td> 
-    <td>10K</td>
-    <td>0805</td>
+<h2>Firmware Architecture </h2>
+Bootloader-ul pentru Atmega164A este deja incarcat inainte de primirea chip-ului. Firmware-ul poate fi flashed folosind programul AvrBuster.exe Firmware-ul pentru Atmega164A este scris in C folosind compilatorul CodeVisionAVR ANSI C Compiler si IDE-ul CodeVisionAVR. Codul in C a fost creat folosind Code Wizard-ul IDE-ului. Pentru jocul Simon Says vom folosi doar Portul A al microcontrollerului. Astfel, cu Code Wizard am initializat Pinii PA0->3 ca input si conectati la rezistorul pull-up intern, acesti pini fiind conectati la switch-uri, iar pinii PA4->7 sunt de tip output prin care aprindem LED-urile. Codul are ca structura principala doi vectori de lungime MAX_LEVEL, unul fiind lista de secvente a nivelului si al doilea fiind secventa introdusa de catre jucator. Astfel, lungimea jocului poate fi setata folosind MAX_LEVEL. La pornirea firmware-ului se umple vectorul nivelului cu valori randomizate intre 0 si 4. De-a lungul jocului se completeaza si vectorul cu secventele introduse de jucator, si se vor compara ce doi vetori. In momentul in care se greseste o secventa sau se ajunge la lungimea maxima, se termina jocul si se reseteaza vectorii. De asemenea Firmware-ul are implementat o dificultate a jocului, anume viteza afisarii secventei curente. Cu cat este mai avansat jocul intr-o secventa mai mare, aceasta viteza creste, facand jocul mai dificil cu cat te joci mai mult.
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>R2</td> 
-    <td>470</td>
-    <td>0805</td>
+Utilizare Memorie Firmware: EEPROM usage: 0 byte(s), 0.0% of EEPROM
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>C5,C6,C13</td> 
-    <td>100nF</td>
-    <td>0805</td>
+Program size: 646 words (1292 bytes), 7.9% of FLASH
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>22pF</td> 
-    <td>C2,C3</td>
-    <td>0805</td>
+RAM Global variables size: 404 byte(s)
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>-</td> 
-    <td>X1</td>
-    <td>-</td>
+Estimated Data Stack usage: 6 byte(s)
 
-    <td>UPB</td>
-    <td>-</td>
-    <tr>
-    <td>2</td>
-    <td>SW1,SW2</td> 
-    <td>-</td>
-    <td>-</td>
+(Informatie data de compilator)
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>C1</td> 
-    <td>1uF</td>
-    <td>THT-100mils</td>
+<h2>Bibliografie </h2>
+https://create.arduino.cc/projecthub/bernieri/genius-game-simon-0e76dc
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-   <tr>
-    <td>1</td>
-    <td>D2</td> 
-    <td>Led_rous</td>
-    <td>THT-100mils</td>
+https://www.youtube.com/watch?v=xLLTxN_UBnI
 
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-   <tr>
-    <td>1</td>
-    <td>J1</td> 
-    <td>CON3</td>
-    <td>THT-3x100mils</td>
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-   <tr>
-    <td>1</td>
-    <td>-</td> 
-    <td>Soclu DIP40</td>
-    <td>-</td>
-    <td>UPB</td>
-    <td>-</td>
-  </tr>
-  </tr>
-</table>
+http://ww1.microchip.com/downloads/en/devicedoc/atmel-8272-8-bit-avr-microcontroller-atmega164a_pa-324a_pa-644a_pa-1284_p_datasheet.pdf
+
+https://cdn.sparkfun.com/datasheets/Dev/Arduino/Other/CH340DS1.PDF
 
 </body>
 
