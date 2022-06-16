@@ -11,7 +11,7 @@ https://youtu.be/xLLTxN_UBnI
 ## Firmware Architecture
 Bootloader-ul pentru Atmega164A este deja incarcat inainte de primirea chip-ului. Firmware-ul poate fi flashed folosind programul AvrBuster.exe
 Firmware-ul pentru Atmega164A este scris in C folosind compilatorul CodeVisionAVR ANSI C Compiler si IDE-ul CodeVisionAVR. Codul in C  a fost creat folosind Code Wizard-ul IDE-ului.
-Pentru jocul Simon Says vom folosi doar Portul A al microcontrollerului. Astfel, cu Code Wizard am initializat Pinii PA0->3 ca input si conectati la rezistorul pull-up intern, acesti pini fiind conectati la switch-uri, iar pinii PA4->7 sunt de tip output prin care aprindem LED-urile.
+Pentru jocul Simon Says vom folosi doar Portul B al microcontrollerului. Astfel, cu Code Wizard am initializat Pinii PB0->3 ca input si conectati la rezistorul pull-up intern, acesti pini fiind conectati la switch-uri, iar pinii PB4->7 sunt de tip output prin care aprindem LED-urile.
 Codul are ca structura principala doi vectori de lungime MAX_LEVEL, unul fiind lista de secvente a nivelului si al doilea fiind secventa introdusa de catre jucator.
 Astfel, lungimea jocului poate fi setata folosind MAX_LEVEL. La pornirea firmware-ului se umple vectorul nivelului cu valori randomizate intre 0 si 4. De-a lungul jocului se completeaza si vectorul cu secventele introduse de jucator, si se vor compara ce doi vetori. In momentul in care se greseste o secventa sau se ajunge la lungimea maxima, se termina jocul si se reseteaza vectorii.
 De asemenea Firmware-ul are implementat o dificultate a jocului, anume viteza afisarii secventei curente. Cu cat este mai avansat jocul intr-o secventa mai mare, aceasta viteza creste, facand jocul mai dificil cu cat te joci mai mult.
@@ -28,7 +28,7 @@ Estimated Data Stack usage: 6 byte(s)
 (Informatie data de compilator)
 
 ## Hadware Description
-Placuta THT este compusa dintr-un microcontroller ATMEGA164A cu footprint THD si componentele sale auxiliare (condensatoare, quartz si un LED pentru verificare), iar portul A al microcontrollerului este impartit jumate in input si output. Jumatea de input a portului A este conectat la 4 butoane la GND, iar jumatea de output este conectat la 4 led-uri. Alimentarea se face printr-un USB bridge bazat pe chip-ul CH340G USB to Serial Converter.
+Placuta THT este compusa dintr-un microcontroller ATMEGA164A cu footprint THD si componentele sale auxiliare (condensatoare, quartz si un LED pentru verificare), iar portul A al microcontrollerului este impartit jumate in input si output. Jumatea de input a portului B este conectat la 4 butoane la GND, iar jumatea de output este conectat la 4 led-uri. Alimentarea se face printr-un USB bridge bazat pe chip-ul CH340G USB to Serial Converter.
 
 Varianta SMD introduce un package mai mic pentru toate componentele, ATMEGA164A fiind pe footprint TQFP si toate rezistoarele, condensatoare si led-urile pe footprint 0805. Bridge-ul USB to Serial este incorporat in placuta conectat la un port micro-USB pus pe placuta.
 ## Hardware Schematic 
